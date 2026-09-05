@@ -1,0 +1,69 @@
+text,category,sentiment,is_relevant
+"Mahasiswa Unsrat berhasil meraih medali emas dalam kompetisi karya ilmiah nasional di Jakarta",Prestasi,Positive,True
+"Tim robotik Unima juara satu lomba robot cerdas tingkat nasional kategori autonomous",Prestasi,Positive,True
+"Dosen Unklab mendapatkan penghargaan riset terbaik tingkat internasional bidang kecerdasan buatan",Prestasi,Positive,True
+"Polimdo sabet juara umum olimpiade vokasi terapan setelah kalahkan puluhan politeknik se-Indonesia",Prestasi,Positive,True
+"Atlet silat mahasiswa De La Salle Manado borong medali perak di ajang pekan olahraga mahasiswa nasional",Prestasi,Positive,True
+"Fakultas Kedokteran Unsrat meluluskan seratus dokter spesialis baru dengan predikat pujian",Prestasi,Positive,True
+"Unsrat resmi membuka pendaftaran jalur SNBP dan SNBT tahun akademik baru untuk calon mahasiswa",Penerimaan Mahasiswa,Neutral,True
+"Unima buka jalur seleksi mandiri gelombang kedua dengan kuota seribu mahasiswa baru",Penerimaan Mahasiswa,Neutral,True
+"Politeknik Negeri Manado mulai menerima pendaftaran calon mahasiswa baru jalur kemitraan industri",Penerimaan Mahasiswa,Neutral,True
+"Syarat dan alur registrasi ulang mahasiswa baru Universitas Klabat semester ganjil",Penerimaan Mahasiswa,Neutral,True
+"Universitas Prisma buka program studi baru bidang teknologi informasi untuk mahasiswa baru",Penerimaan Mahasiswa,Neutral,True
+"Pemprov Sulut kembali mengucurkan beasiswa pendidikan untuk mahasiswa kurang mampu dan berprestasi",Beasiswa,Positive,True
+"Informasi pendaftaran beasiswa KIP Kuliah di lingkungan Universitas Sam Ratulangi Manado",Beasiswa,Neutral,True
+"Bank Indonesia serahkan bantuan beasiswa generasi baru kepada puluhan mahasiswa Unsrat dan Unima",Beasiswa,Positive,True
+"Beasiswa Djarum Plus membuka kesempatan registrasi bagi mahasiswa berprestasi semester empat di Sulut",Beasiswa,Positive,True
+"Yayasan Eben Haezar sediakan beasiswa khusus bagi mahasiswa berprestasi dari daerah kepulauan",Beasiswa,Positive,True
+"Peneliti Unsrat temukan senyawa bioaktif terumbu karang Bunaken untuk obat antimikroba baru",Penelitian,Positive,True
+"Dosen Fakultas Teknik Unima ciptakan alat pengering cengkih cerdas bertenaga panel surya",Penelitian,Positive,True
+"Riset kolaborasi Unklab hasilkan aplikasi deteksi penyakit daun kelapa berbasis machine learning",Penelitian,Positive,True
+"Publikasi jurnal ilmiah Polimdo terindeks scopus meningkat pesat sepanjang tahun ini",Penelitian,Positive,True
+"Laboratorium sains ITM Tomohon kembangkan beton ramah lingkungan berbahan abu vulkanik Lokon",Penelitian,Positive,True
+"Rektor Unsrat lantik puluhan dekan dan ketua lembaga baru di lingkungan kampus Kleak",Rektor,Neutral,True
+"Pidato tahunan Rektor Unima tekankan komitmen kampus tonsaru menuju akreditasi internasional",Rektor,Positive,True
+"Rektor Universitas Klabat sambut kunjungan delegasi kedutaan besar negara sahabat di Airmadidi",Rektor,Positive,True
+"Pertemuan tahunan forum rektor perguruan tinggi se-Sulawesi Utara bahas hilirisasi riset",Rektor,Neutral,True
+"Rektor IAIN Manado ajak civitas akademika perkuat moderasi beragama di bumi nyiur melambai",Rektor,Positive,True
+"Pengukuhan tiga guru besar baru bidang kelautan dan perikanan di Universitas Sam Ratulangi",Dosen,Positive,True
+"Puluhan dosen Unima ikuti pelatihan penulisan artikel ilmiah bereputasi internasional",Dosen,Neutral,True
+"Asosiasi dosen vokasi Polimdo adakan sertifikasi keahlian industri bidang keteknikan",Dosen,Neutral,True
+"Dosen muda Unsrat raih dana hibah penelitian kompetitif nasional dari kementerian",Dosen,Positive,True
+"BEM Unsrat selenggarakan bakti sosial dan pasar murah bagi masyarakat sekitar kampus",Mahasiswa,Positive,True
+"Aktivitas mahasiswa pecinta alam Unima gelar pembersihan jalur pendakian gunung Lokon",Mahasiswa,Positive,True
+"Pelatihan kepemimpinan dasar mahasiswa baru Polimdo berlangsung khidmat di aula kampus",Mahasiswa,Neutral,True
+"Himpunan mahasiswa informatika Unklab gelar hackathon tingkat pelajar se-Sulawesi Utara",Mahasiswa,Positive,True
+"Kepanitiaan wisuda Unsrat umumkan jadwal pelaksanaan wisuda periode ganjil secara daring dan luring",Akademik,Neutral,True
+"Biro akademik Unima umumkan jadwal pengisian kartu rencana studi KRS semester genap",Akademik,Neutral,True
+"Jadwal yudisium sarjana dan magister Fakultas Hukum Unsrat resmi dirilis",Akademik,Neutral,True
+"Perubahan kalender akademik perkuliahan Politeknik Negeri Manado menyambut hari raya",Akademik,Neutral,True
+"Unsrat tandatangani nota kesepahaman MoU dengan Universitas ternama di Jepang bidang kelautan",Kerja Sama,Positive,True
+"Unima jalin kemitraan dengan industri otomotif nasional untuk program magang bersertifikat",Kerja Sama,Positive,True
+"De La Salle Manado teken kerja sama pertukaran mahasiswa dengan universitas di Filipina",Kerja Sama,Positive,True
+"Polimdo kirimkan mahasiswa magang industri manufaktur ke Jerman selama satu tahun",Kerja Sama,Positive,True
+"Universitas Sam Ratulangi resmikan gedung perkuliahan terpadu dan laboratorium sentral",Infrastruktur,Positive,True
+"Pembangunan asrama mahasiswa Unima di Tondano rampung dan siap difungsikan",Infrastruktur,Positive,True
+"Polimdo bangun bengkel permesinan berstandar industri 4.0 untuk mahasiswa teknik mesin",Infrastruktur,Positive,True
+"Peremajaan fasilitas jaringan internet WiFi di kawasan kampus Unsrat Kleak",Infrastruktur,Positive,True
+"Unklab luncurkan sistem informasi akademik baru berbasis mobile app dan cloud",Teknologi,Positive,True
+"Unsrat kembangkan portal e-learning cerdas untuk mendukung perkuliahan hybrid",Teknologi,Positive,True
+"Penerapan presensi mahasiswa berbasis kecerdasan buatan di Politeknik Negeri Manado",Teknologi,Neutral,True
+"Pemilihan ketua Badan Eksekutif Mahasiswa BEM Unsrat berlangsung demokratis dan kondusif",Organisasi,Neutral,True
+"Kongres mahasiswa Unima tetapkan garis besar program kerja dewan perwakilan mahasiswa",Organisasi,Neutral,True
+"Ikatan Alumni Unsrat IKA berikan bantuan dana pendidikan dan perbaikan fasilitas kampus",Alumni,Positive,True
+"Reuni akbar alumni Fakultas Ekonomi Unima hasilkan komitmen pendirian pusat inkubator bisnis",Alumni,Positive,True
+"Kemendiktisaintek keluarkan regulasi baru mengenai sistem akreditasi program studi perguruan tinggi",Kebijakan,Neutral,True
+"Rektorat Unsrat terbitkan surat edaran mengenai tata tertib perkuliahan dan etika berbusana",Kebijakan,Neutral,True
+"Ratusan mahasiswa gelar unjuk rasa di rektorat tuntut keringanan biaya kuliah tunggal UKT",Konflik,Negative,True
+"Aksi saling lempar antar kelompok mahasiswa di luar gerbang kampus berhasil diredam pihak kepolisian",Konflik,Negative,True
+"Kejaksaan tinggi periksa saksi terkait dugaan penyimpangan dana pembangunan gedung laboratorium",Hukum,Negative,True
+"Pihak berwajib selidiki peredaran ijazah palsu yang mengatasnamakan perguruan tinggi swasta di Manado",Hukum,Negative,True
+"Pemerintah Provinsi Sulawesi Utara dorong peningkatan mutu perguruan tinggi swasta dan negeri",Pendidikan,Positive,True
+"Seminar nasional pendidikan tinggi bahas kesiapan lulusan sarjana Sulut di era revolusi industri",Pendidikan,Neutral,True
+"Dies Natalis ke-60 Universitas Sam Ratulangi dimeriahkan jalan sehat dan pameran inovasi kampus",Kegiatan,Positive,True
+"IAIN Manado gelar workshop penulisan karya ilmiah bertaraf internasional untuk akademisi",Kegiatan,Neutral,True
+"Perayaan wisuda angkatan baru STIKES Bethesda Tomohon dihadiri perwakilan dinas kesehatan",Kegiatan,Positive,True
+"Arus lalu lintas di jalan Boulevard Pierre Tendean Manado terpantau padat merayap sore ini",Lainnya,Neutral,False
+"Harga komoditas cengkih dan pala di pasar tradisional Bersehati Manado mengalami kenaikan",Lainnya,Neutral,False
+"Cuaca buruk hujan lebat disertai angin kencang landa wilayah pesisir Minahasa Utara",Lainnya,Neutral,False
+"Hasil pertandingan sepak bola Liga Indonesia pekan ini tim tamu raih poin penuh",Lainnya,Neutral,False

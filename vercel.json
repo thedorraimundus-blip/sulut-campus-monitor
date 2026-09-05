@@ -1,0 +1,27 @@
+﻿{
+  version: 2,
+  framework: vite,
+  builds: [
+    {
+      src: frontend/package.json,
+      use: @vercel/static-build,
+      config: { distDir: dist }
+    }
+  ],
+  routes: [
+    {
+      src: /api/(.*),
+      dest: http://localhost:8000/api/
+    },
+    {
+      src: /(.*),
+      dest: /frontend/
+    }
+  ],
+  crons: [
+    {
+      path: /api/cron/crawl-due,
+      schedule: */15 * * * *
+    }
+  ]
+}
