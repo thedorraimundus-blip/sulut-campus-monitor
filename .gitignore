@@ -3,23 +3,45 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
-*.db
-*.sqlite
-*.sqlite3
-data/database.sqlite
-data/
+
+# Database - jangan di-upload ke GitHub
+backend/data/database.sqlite
+backend/data/*.sqlite
+backend/data/*.db
+
+# AI Model files - di-generate ulang saat deploy
+backend/data/models/
+backend/data/training/
+
+# Environment files
 .env
 .env.local
 .env.production
+backend/.env
+frontend/.env
+
+# Python virtual env
 venv/
 .venv/
+env/
+
+# Node
 node_modules/
+frontend/dist/
+frontend/build/
+
+# Python build artifacts
+*.egg-info/
 dist/
 build/
-*.egg-info/
 .pytest_cache/
 .mypy_cache/
+
+# Logs
 logs/
 *.log
+
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
