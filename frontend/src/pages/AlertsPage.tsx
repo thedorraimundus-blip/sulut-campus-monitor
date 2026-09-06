@@ -34,10 +34,25 @@ export const AlertsPage: React.FC = () => {
   const { refreshAlertCount } = useOutletContext<OutletCtx>();
 
   const [alertList, setAlertList] = useState<AlertItem[]>([]);
-  const [dismissedIds, setDismissedIds] = useState<Set<number>>(new Set());
+  const [dismissedIds, setDismissedIds] = useState<Set<number>>(() => {
+    try {
+      const saved = localStorage.getItem('scm_dismissed_alerts');
+      return saved ? new Set(JSON.parse(saved)) : new Set();
+    } catch {
+      return new Set();
+    }
+  });
   const [rules, setRules] = useState<AlertRule[]>([]);
   const [statusFilter, setStatusFilter] = useState<AlertStatus>('UNREAD');
   const [loading, setLoading] = useState(true);
+
+  // Helper to persist dismissed IDs
+  const saveDismissed = (newSet: Set<number>) => {
+    setDismissedIds(newSet);
+    try {
+      localStorage.setItem('scm_dismissed_alerts', JSON.stringify(Array.from(newSet)));
+    } catch {}
+  };
 
   // URL Analyzer panel
   const [urlInput, setUrlInput] = useState('');
@@ -57,7 +72,6 @@ export const AlertsPage: React.FC = () => {
     try {
       const data = await alertsApi.getAlerts(false);
       setAlertList(data ?? []);
-      setDismissedIds(new Set()); // reset dismissed on refresh
     } catch (err) {
       console.error('Alerts fetch error:', err);
       setAlertList([]);
@@ -71,19 +85,17 @@ export const AlertsPage: React.FC = () => {
     setRules(mockAlertRules);
   }, [fetchAlerts]);
 
-  // Mark single alert as read → REMOVE from visible list immediately
+  // Mark single alert as read → REMOVE from visible list immediately & save to localStorage
   const handleMarkRead = async (id: number) => {
-    // Instantly hide from UI (optimistic update)
-    setDismissedIds((prev) => new Set([...prev, id]));
+    saveDismissed(new Set([...dismissedIds, id]));
     await alertsApi.markAsRead(id);
     refreshAlertCount();
   };
 
-  // Mark ALL as read → clear the entire list immediately
+  // Mark ALL as read → clear the entire list immediately & save to localStorage
   const handleMarkAllRead = async () => {
-    // Instantly dismiss all
-    const allIds = new Set(alertList.map((a) => a.id));
-    setDismissedIds(allIds);
+    const allIds = new Set([...dismissedIds, ...alertList.map((a) => a.id)]);
+    saveDismissed(allIds);
     await alertsApi.markAllAsRead();
     refreshAlertCount();
   };

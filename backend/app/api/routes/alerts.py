@@ -52,8 +52,7 @@ def list_alerts(
 
 @router.post("/mark-all-read")
 def mark_all_alerts_as_read(
-    db: Session = Depends(get_db),
-    admin=Depends(require_admin)
+    db: Session = Depends(get_db)
 ):
     """Mark ALL unread alerts as read (bulk action)."""
     db.query(Alert).filter(Alert.is_read == False).update({"is_read": True})
@@ -64,10 +63,9 @@ def mark_all_alerts_as_read(
 @router.post("/{alert_id}/read")
 def mark_alert_as_read(
     alert_id: int,
-    db: Session = Depends(get_db),
-    admin=Depends(require_admin)
+    db: Session = Depends(get_db)
 ):
-    """Mark an alert as read by administrator."""
+    """Mark an alert as read."""
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found")
