@@ -90,6 +90,7 @@ class University(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(256), unique=True, nullable=False)
     short_name = Column(String(64), nullable=False)
+    type = Column(String(16), default="PTS")  # PTN, PTS, PTK
     description = Column(Text, nullable=True)
     website = Column(String(256), nullable=True)
     logo = Column(String(512), nullable=True)

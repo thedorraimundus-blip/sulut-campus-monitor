@@ -42,6 +42,7 @@ class UniversityAliasOut(BaseModel):
 class UniversityBase(BaseModel):
     name: str
     short_name: str
+    type: Optional[str] = "PTS"
     description: Optional[str] = None
     website: Optional[str] = None
     logo: Optional[str] = None

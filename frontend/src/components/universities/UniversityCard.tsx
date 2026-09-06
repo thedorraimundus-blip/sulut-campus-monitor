@@ -24,6 +24,13 @@ export const UniversityCard: React.FC<UniversityCardProps> = ({
   // Generate distinct pastel or deep gradient based on initials
   const initials = university.short_name || university.name.substring(0, 3).toUpperCase();
 
+  const ptnList = ['UNSRAT', 'UNIMA', 'Polimdo', 'IAIN Manado', 'Poltekkes Manado'];
+  const campusType = university.type
+    ? university.type
+    : ptnList.includes(university.short_name) || university.name.toLowerCase().includes('negeri')
+    ? 'PTN'
+    : 'PTS';
+
   return (
     <div className="bg-white dark:bg-[#0f172a]/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-sky-500/60 dark:hover:border-sky-500/50 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-200 flex flex-col justify-between group">
       <div>
@@ -38,8 +45,12 @@ export const UniversityCard: React.FC<UniversityCardProps> = ({
                 <h3 className="font-extrabold text-slate-900 dark:text-slate-100 text-base leading-tight">
                   {university.short_name}
                 </h3>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                  {university.type || 'PTN'}
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                  campusType === 'PTN'
+                    ? 'bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-300/40'
+                    : 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300/40'
+                }`}>
+                  {campusType}
                 </span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">

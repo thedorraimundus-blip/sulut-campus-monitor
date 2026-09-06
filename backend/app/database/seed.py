@@ -89,6 +89,7 @@ def seed():
         {
             "name": "Universitas Sam Ratulangi",
             "short_name": "UNSRAT",
+            "type": "PTN",
             "description": "Perguruan tinggi negeri tertua dan terbesar di Sulawesi Utara, berlokasi di Kleak, Manado.",
             "website": "https://www.unsrat.ac.id",
             "logo": "https://upload.wikimedia.org/wikipedia/id/f/fa/Logo_Unsrat.png",
@@ -98,6 +99,7 @@ def seed():
         {
             "name": "Universitas Negeri Manado",
             "short_name": "UNIMA",
+            "type": "PTN",
             "description": "Perguruan tinggi negeri berfokus kependidikan di dataran tinggi Tonsaru, Tondano.",
             "website": "https://unima.ac.id",
             "logo": "https://upload.wikimedia.org/wikipedia/id/b/b3/Logo_Unima.png",
@@ -107,6 +109,7 @@ def seed():
         {
             "name": "Universitas Klabat",
             "short_name": "UNKLAB",
+            "type": "PTS",
             "description": "Perguruan tinggi swasta unggulan berstandar internasional di Airmadidi, Minahasa Utara.",
             "website": "https://www.unklab.ac.id",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Universitas_Klabat.png",
@@ -116,6 +119,7 @@ def seed():
         {
             "name": "Universitas Katolik De La Salle Manado",
             "short_name": "De La Salle",
+            "type": "PTS",
             "description": "Kampus swasta Katolik bertaraf internasional di Kombos Kairagi, Manado.",
             "website": "https://www.unikadelasalle.ac.id",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_Unika_De_La_Salle_Manado.png",
@@ -125,6 +129,7 @@ def seed():
         {
             "name": "Politeknik Negeri Manado",
             "short_name": "Polimdo",
+            "type": "PTN",
             "description": "Pendidikan vokasi negeri terdepan di Sulawesi Utara, berlokasi di Buha, Manado.",
             "website": "https://polimdo.ac.id",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Logo_Politeknik_Negeri_Manado.png",
@@ -134,6 +139,7 @@ def seed():
         {
             "name": "Institut Teknologi Minaesa",
             "short_name": "ITM",
+            "type": "PTS",
             "description": "Institut teknik dan rekayasa di kota sejuk Tomohon.",
             "website": "https://itmtomohon.ac.id",
             "logo": "",
@@ -143,6 +149,7 @@ def seed():
         {
             "name": "Universitas Prisma",
             "short_name": "Prisma",
+            "type": "PTS",
             "description": "Perguruan tinggi swasta modern di Kombos, Manado.",
             "website": "https://prisma.ac.id",
             "logo": "",
@@ -152,6 +159,7 @@ def seed():
         {
             "name": "Universitas Nusantara Manado",
             "short_name": "UNN",
+            "type": "PTS",
             "description": "Universitas swasta di Manado dengan berbagai program studi unggulan.",
             "website": "https://nusantara.ac.id",
             "logo": "",
@@ -161,6 +169,7 @@ def seed():
         {
             "name": "STIE Eben Haezar",
             "short_name": "Benzar",
+            "type": "PTS",
             "description": "Sekolah Tinggi Ilmu Ekonomi ternama di bawah naungan Yayasan Eben Haezar Manado.",
             "website": "https://stiebenhaezar.ac.id",
             "logo": "",
@@ -170,6 +179,7 @@ def seed():
         {
             "name": "STIKES Bethesda Tomohon",
             "short_name": "Bethesda",
+            "type": "PTS",
             "description": "Sekolah Tinggi Ilmu Kesehatan bereputasi di Tomohon.",
             "website": "https://stikesbethesda.ac.id",
             "logo": "",
@@ -179,6 +189,7 @@ def seed():
         {
             "name": "Poltekkes Kemenkes Manado",
             "short_name": "Poltekkes Manado",
+            "type": "PTN",
             "description": "Pendidikan tinggi vokasi kesehatan milik Kementerian Kesehatan RI di Malalayang.",
             "website": "https://poltekkesmanado.ac.id",
             "logo": "",
@@ -188,6 +199,7 @@ def seed():
         {
             "name": "IAIN Manado",
             "short_name": "IAIN Manado",
+            "type": "PTN",
             "description": "Institut Agama Islam Negeri satu-satunya di Sulawesi Utara, berlokasi di Malendeng.",
             "website": "https://iain-manado.ac.id",
             "logo": "",
@@ -197,6 +209,7 @@ def seed():
         {
             "name": "Universitas Trinita Manado",
             "short_name": "Trinita",
+            "type": "PTS",
             "description": "Universitas swasta yang berkembang pesat di Manado.",
             "website": "https://trinita.ac.id",
             "logo": "",
@@ -206,6 +219,7 @@ def seed():
         {
             "name": "Universitas Sari Putra Indonesia Tomohon",
             "short_name": "UNSRIT",
+            "type": "PTS",
             "description": "Universitas swasta di Kakaskasen, Tomohon.",
             "website": "https://unsrit.ac.id",
             "logo": "",
@@ -215,6 +229,7 @@ def seed():
         {
             "name": "Universitas Teknologi Sulawesi Utara",
             "short_name": "UTSU",
+            "type": "PTS",
             "description": "Perguruan tinggi teknologi di kawasan pusat kota Manado.",
             "website": "https://utsu.ac.id",
             "logo": "",
@@ -229,6 +244,7 @@ def seed():
             univ = University(
                 name=udata["name"],
                 short_name=udata["short_name"],
+                type=udata["type"],
                 description=udata["description"],
                 website=udata["website"],
                 logo=udata["logo"],
@@ -239,6 +255,9 @@ def seed():
             db.flush()
             for alias in udata["aliases"]:
                 db.add(UniversityAlias(university_id=univ.id, alias=alias))
+        else:
+            univ.type = udata["type"]
+            db.flush()
 
     # ------------------------------------------------------------------ #
     # 4. Verified Working News Sources
