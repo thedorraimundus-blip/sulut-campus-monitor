@@ -304,15 +304,15 @@ def seed():
             "crawl_interval": 15,
             "note": "Base accessible, RSS returns 403 — HTML fallback",
         },
-        {
-            "name": "SulutKini",
-            "base_url": "https://sulut.inews.id",
-            "rss_url": "https://sulut.inews.id/feed",
-            "source_type": "rss",
-            "crawl_interval": 15,
-            "note": "Regional iNews Sulut",
-        },
     ]
+
+    # Remove inactive/broken sources if previously present in DB
+    broken_source = db.query(Source).filter(Source.name == "SulutKini").first()
+    if broken_source:
+        from app.database.models import Article
+        db.query(Article).filter(Article.source_id == broken_source.id).delete()
+        db.delete(broken_source)
+        db.flush()
 
     for sdata in sources_data:
         src = db.query(Source).filter(Source.name == sdata["name"]).first()
