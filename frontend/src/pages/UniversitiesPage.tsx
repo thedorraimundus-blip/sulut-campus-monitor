@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import {
   GraduationCap, Building2, TrendingUp, Search, Award,
   Filter, MapPin, ExternalLink, ArrowRight
@@ -35,6 +35,20 @@ export const UniversitiesPage: React.FC = () => {
     return Array.from(new Set(list));
   }, [universities]);
 
+  const checkIsPTN = useCallback((u: University) => {
+    const nameLower = (u.name || '').toLowerCase();
+    const shortLower = (u.short_name || '').toLowerCase();
+    const ptnShortNames = ['unsrat', 'unima', 'polimdo', 'iain manado', 'poltekkes manado'];
+    return (
+      ptnShortNames.includes(shortLower) ||
+      nameLower.includes('negeri') ||
+      nameLower.includes('ratulangi') ||
+      nameLower.includes('iain') ||
+      nameLower.includes('poltekkes') ||
+      u.type === 'PTN'
+    );
+  }, []);
+
   const filteredUniversities = useMemo(() => {
     return universities.filter((u) => {
       if (search) {
@@ -45,7 +59,7 @@ export const UniversitiesPage: React.FC = () => {
       }
 
       if (typeFilter !== 'ALL') {
-        const isPTN = u.type === 'PTN' || u.short_name === 'UNSRAT' || u.short_name === 'UNIMA' || u.short_name === 'Polimdo';
+        const isPTN = checkIsPTN(u);
         if (typeFilter === 'PTN' && !isPTN) return false;
         if (typeFilter === 'PTS' && isPTN) return false;
       }
@@ -56,13 +70,11 @@ export const UniversitiesPage: React.FC = () => {
 
       return true;
     });
-  }, [universities, search, typeFilter, selectedCity]);
+  }, [universities, search, typeFilter, selectedCity, checkIsPTN]);
 
   // Aggregate stats
   const totalCount = universities.length;
-  const ptnCount = universities.filter(
-    (u) => u.type === 'PTN' || u.short_name === 'UNSRAT' || u.short_name === 'UNIMA' || u.short_name === 'Polimdo'
-  ).length;
+  const ptnCount = universities.filter(checkIsPTN).length;
   const ptsCount = totalCount - ptnCount;
   const topUniv = [...universities].sort((a, b) => b.article_count - a.article_count)[0];
 

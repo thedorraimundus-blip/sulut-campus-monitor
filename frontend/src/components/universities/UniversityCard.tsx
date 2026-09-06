@@ -24,12 +24,19 @@ export const UniversityCard: React.FC<UniversityCardProps> = ({
   // Generate distinct pastel or deep gradient based on initials
   const initials = university.short_name || university.name.substring(0, 3).toUpperCase();
 
-  const ptnList = ['UNSRAT', 'UNIMA', 'Polimdo', 'IAIN Manado', 'Poltekkes Manado'];
-  const campusType = university.type
-    ? university.type
-    : ptnList.includes(university.short_name) || university.name.toLowerCase().includes('negeri')
-    ? 'PTN'
-    : 'PTS';
+  const ptnShortNames = ['UNSRAT', 'UNIMA', 'Polimdo', 'IAIN Manado', 'Poltekkes Manado'];
+  const nameLower = (university.name || '').toLowerCase();
+  const shortLower = (university.short_name || '').toLowerCase();
+
+  const isPTN =
+    ptnShortNames.some((p) => p.toLowerCase() === shortLower) ||
+    nameLower.includes('negeri') ||
+    nameLower.includes('ratulangi') ||
+    nameLower.includes('iain') ||
+    nameLower.includes('poltekkes') ||
+    university.type === 'PTN';
+
+  const campusType = isPTN ? 'PTN' : (university.type === 'PTK' ? 'PTK' : 'PTS');
 
   return (
     <div className="bg-white dark:bg-[#0f172a]/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-sky-500/60 dark:hover:border-sky-500/50 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-200 flex flex-col justify-between group">
